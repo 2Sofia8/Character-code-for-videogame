@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1032.5, 75.5 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 40.0
+margin_right = 1918.0
+margin_bottom = 1002.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 962, 537 )
+
+[node name="StaticBodyFloor" type="StaticBody2D" parent="."]
+position = Vector2( 12, 973 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyFloor"]
+position = Vector2( 945.5, 65.5 )
+shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": "floor test"
+}
