@@ -1,0 +1,102 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Pointers/PointerP2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://CharaSelect/CharacterSelect2D.gd" type="Script" id=2]
+[ext_resource path="res://Pointers/PointerP1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/CharSelectSprites/milei1.png" type="Texture" id=4]
+[ext_resource path="res://Resources/CharSelectSprites/del caño.png" type="Texture" id=5]
+[ext_resource path="res://Resources/CharSelectSprites/alberto1.png" type="Texture" id=6]
+[ext_resource path="res://Resources/CharSelectSprites/larreta1.png" type="Texture" id=7]
+[ext_resource path="res://Resources/CharSelectSprites/bullrich.png" type="Texture" id=8]
+[ext_resource path="res://Resources/CharSelectSprites/milei.png" type="Texture" id=9]
+[ext_resource path="res://Resources/CharSelectSprites/massa.png" type="Texture" id=10]
+[ext_resource path="res://Resources/CharSelectSprites/Ilustración4.png" type="Texture" id=11]
+[ext_resource path="res://Resources/ActualTheme1.tres" type="Theme" id=12]
+[ext_resource path="res://Fade/FadeOverlay.tscn" type="PackedScene" id=13]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 185.709, 253.786 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Ilustración4" type="Sprite" parent="."]
+position = Vector2( 937, 462 )
+scale = Vector2( 1.25385, 1.2945 )
+texture = ExtResource( 11 )
+
+[node name="GridContainer2" type="Node2D" parent="."]
+process_priority = 1
+position = Vector2( 521, 207 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="alberto" type="Sprite" parent="GridContainer2" groups=["Characters"]]
+position = Vector2( 192, 198 )
+texture = ExtResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="GridContainer2/alberto"]
+position = Vector2( -192, -198 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridContainer2/alberto/Area2D"]
+position = Vector2( 198, 203 )
+scale = Vector2( 1.0231, 0.752602 )
+shape = SubResource( 2 )
+
+[node name="milei" type="Sprite" parent="GridContainer2" groups=["Characters"]]
+position = Vector2( 610, 198 )
+texture = ExtResource( 4 )
+
+[node name="larreta" type="Sprite" parent="GridContainer2" groups=["Characters"]]
+position = Vector2( 1018, 198 )
+texture = ExtResource( 7 )
+
+[node name="bullrich" type="Sprite" parent="GridContainer2" groups=["Characters"]]
+position = Vector2( 1414, 198 )
+texture = ExtResource( 8 )
+
+[node name="del caño" type="Sprite" parent="GridContainer2" groups=["Characters"]]
+position = Vector2( 186, 606 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_editor_description_": "del caño"
+}
+
+[node name="massa" type="Sprite" parent="GridContainer2" groups=["Characters"]]
+position = Vector2( 606, 600 )
+texture = ExtResource( 10 )
+
+[node name="scioli" type="Sprite" parent="GridContainer2" groups=["Characters"]]
+position = Vector2( 1018, 606 )
+texture = ExtResource( 9 )
+
+[node name="macri" type="Sprite" parent="GridContainer2" groups=["Characters"]]
+position = Vector2( 1426, 612 )
+texture = ExtResource( 9 )
+
+[node name="PointerP2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1660, 605 )
+
+[node name="PointerP1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 215, 580 )
+
+[node name="Volver" type="Button" parent="."]
+margin_right = 456.0
+margin_bottom = 132.0
+theme = ExtResource( 12 )
+text = "Volver"
+
+[node name="A Pelear!" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1298.0
+margin_top = 911.0
+margin_right = 1913.0
+margin_bottom = 1043.0
+theme = ExtResource( 12 )
+text = "A Pelear!"
+
+[node name="TransitionScreen" parent="." instance=ExtResource( 13 )]
+layer = 0
+
+[connection signal="pressed" from="Volver" to="." method="_on_Volver_pressed"]
+[connection signal="pressed" from="A Pelear!" to="." method="_on_A_Pelear_pressed"]
