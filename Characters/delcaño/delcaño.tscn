@@ -1,0 +1,203 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Characters/delcaño/idle002.png" type="Texture" id=1]
+[ext_resource path="res://Characters/delcaño/idle003.png" type="Texture" id=2]
+[ext_resource path="res://Characters/delcaño/idle001.png" type="Texture" id=3]
+[ext_resource path="res://Characters/delcaño/idle000.png" type="Texture" id=4]
+[ext_resource path="res://Characters/delcaño/delcaño.gd" type="Script" id=5]
+[ext_resource path="res://Characters/delcaño/crouch003.png" type="Texture" id=6]
+[ext_resource path="res://Characters/delcaño/crouch002.png" type="Texture" id=7]
+[ext_resource path="res://Characters/delcaño/crouch000.png" type="Texture" id=8]
+[ext_resource path="res://Characters/delcaño/crouch001.png" type="Texture" id=9]
+[ext_resource path="res://Characters/delcaño/hit000.png" type="Texture" id=10]
+[ext_resource path="res://Characters/delcaño/hit001.png" type="Texture" id=11]
+[ext_resource path="res://Characters/delcaño/hit002.png" type="Texture" id=12]
+[ext_resource path="res://Characters/delcaño/hit003.png" type="Texture" id=13]
+[ext_resource path="res://Characters/delcaño/hithard000.png" type="Texture" id=14]
+[ext_resource path="res://Characters/delcaño/hithard001.png" type="Texture" id=15]
+[ext_resource path="res://Characters/delcaño/hithard002.png" type="Texture" id=16]
+[ext_resource path="res://Characters/delcaño/hit004.png" type="Texture" id=17]
+[ext_resource path="res://Characters/delcaño/hithard003.png" type="Texture" id=18]
+[ext_resource path="res://Characters/delcaño/hithard004.png" type="Texture" id=19]
+[ext_resource path="res://Characters/delcaño/hithard005.png" type="Texture" id=20]
+[ext_resource path="res://Characters/delcaño/delcaño.tres" type="Animation" id=21]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "crouch_enter",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "crouch_leave",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "hithard",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "hitsoft",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 6.0
+} ]
+
+[sub_resource type="Animation" id=7]
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "idle" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "hithard"
+length = 0.666667
+loop = true
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "hithard" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.133333, 0.3, 0.5, 0.583333 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "hitsoft"
+length = 0.5
+loop = true
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "hitsoft" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.0833333, 0.25, 0.35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "crouch"
+length = 0.750001
+loop = true
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.166667, 0.333333, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle" ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 151.5, 271.5 )
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 5 )
+
+[node name="borrar, solo por visibilidad" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -314.5
+margin_top = -411.5
+margin_right = 314.5
+margin_bottom = 411.5
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/RESET = SubResource( 7 )
+anims/crouch_enter = ExtResource( 21 )
+anims/hithard = SubResource( 9 )
+anims/hitsoft = SubResource( 10 )
+anims/idle = SubResource( 11 )
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 76 )
+shape = SubResource( 6 )
+
+[connection signal="input_event" from="." to="." method="_on_KinematicBody2D_input_event"]
