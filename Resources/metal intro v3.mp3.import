@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/metal intro v3.mp3-4cecc2e25913955b044bff9d04649fca.mp3str"
+
+[deps]
+
+source_file="res://Resources/metal intro v3.mp3"
+dest_files=[ "res://.import/metal intro v3.mp3-4cecc2e25913955b044bff9d04649fca.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
